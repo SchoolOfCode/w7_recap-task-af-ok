@@ -1,7 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import BlogPost from "../BlogPost";
 import { blog } from "../../data/blogs.js";
 import CommentList from "../CommentList";
+import CommentForm from "../CommentForm";
+
 // import useState from "react";
 
 const blogObject = {
@@ -9,7 +12,11 @@ const blogObject = {
 };
 
 function App() {
-  /*  const [comment, setComment] = useState();
+  const [comment, setComment] = useState([
+    { author: "Afam Okoh", content: "does this work" },
+  ]);
+
+  //generates a random alphanumeric string of given length
   const generateRandomString = (length) => {
     let chars =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -20,6 +27,7 @@ function App() {
     return result;
   };
 
+  // handles comment submits from users
   const handleSubmit = (author, content) => {
     if (!comment) {
       setComment([
@@ -30,12 +38,15 @@ function App() {
         },
       ]);
     }
-    setComment([...comment, {
-      id: generateRandomString(21),
-      author: author,
-      content: content,
-    }]);
-  }; */
+    setComment([
+      ...comment,
+      {
+        id: generateRandomString(21),
+        author: author,
+        content: content,
+      },
+    ]);
+  };
 
   return (
     <>
@@ -46,7 +57,8 @@ function App() {
         content={blogObject.content}
         imageSrc={blogObject.imageSrc}
         imageAlt={blogObject.imageAlt}></BlogPost>
-      <CommentList></CommentList>
+      <CommentList comment={comment}></CommentList>
+      <CommentForm onSubmit={handleSubmit}></CommentForm>
     </>
   );
 }

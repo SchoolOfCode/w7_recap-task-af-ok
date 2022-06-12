@@ -36,15 +36,15 @@ BlogPost (done)
           imageSrc: string,imageAlt: string,}
 
 
-CommentList
+CommentList (done)
     import React
 
-            Takes props (which is the comments state (in App))
+            Takes props (which is the comments state (in App)) (done)
 
 CommentForm 
     import React
 
-        - Takes props handleCommentSubmit as onSubmit prop
+        - Takes props handleSubmit as onSubmit prop
         - Attatches this to the onSubmit button which is part of the form.
 
         <input>
