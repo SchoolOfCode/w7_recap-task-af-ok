@@ -1,0 +1,61 @@
+Code Layout sketch
+
+<App>
+    <BlogPost></BlogPost>
+    <CommentList>
+     [<Comment></Comment>]
+    </CommentList>
+    <CommentForm></CommentForm>
+</App>
+
+Code Breakdown
+App
+    import React
+    import exampleBlog from data (blog.js)
+    import BlogPost
+    import useState
+    
+
+    State
+        - comments: an array of comments objects
+        -  each object formatted as
+            - {id: string, author: string,content: string}
+    
+    Functions (handleCommentSubmit)
+        - Function which can take in an author and comment
+        - creates a new comment object and adds it to the comments state
+        - 
+
+BlogPost (done)
+    import React
+
+    
+    Takes Prop (will use object from data/blogs.js)
+        - the object will have the following shape 
+        - {title: string, author: string, datePosted: string, content: string, 
+          imageSrc: string,imageAlt: string,}
+
+
+CommentList
+    import React
+
+            Takes props (which is the comments state (in App))
+
+CommentForm 
+    import React
+
+        - Takes props handleCommentSubmit as onSubmit prop
+        - Attatches this to the onSubmit button which is part of the form.
+
+        <input>
+            <text> Author</text>
+            <textarea></textarea>
+
+             <text> Comment</text>
+             <textarea></textarea>
+
+             <button onSubmit={handleCommentSubmit}></button>
+        <input>
+
+
+        
