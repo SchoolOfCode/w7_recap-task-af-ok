@@ -5,7 +5,9 @@ function CommentList({ comment }) {
   return comment.map((commentObject) => (
     <Comment
       author={commentObject.author}
-      content={commentObject.content}></Comment>
+      content={commentObject.content}
+      id={commentObject.id}
+      key={commentObject.id}></Comment>
   ));
 }
 

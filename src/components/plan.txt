@@ -44,12 +44,19 @@ CommentList (done)
 CommentForm 
     import React
 
+        State
+        - Can have states to track the user's inputs
+
         - Takes props handleSubmit as onSubmit prop
         - Attatches this to the onSubmit button which is part of the form.
 
+
+        Behaviours
+            - If the comment is empty do not call onSubmit
+        
         <input>
             <text> Author</text>
-            <textarea></textarea>
+            <input></input>
 
              <text> Comment</text>
              <textarea></textarea>

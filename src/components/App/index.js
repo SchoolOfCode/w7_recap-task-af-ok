@@ -13,31 +13,26 @@ const blogObject = {
 
 function App() {
   const [comment, setComment] = useState([
-    { author: "Afam Okoh", content: "does this work" },
+    {
+      author: "Afam Okoh",
+      content: "does this work",
+      id: "kskBC5HZ8qgNQUiW6If6q",
+    },
   ]);
 
-  //generates a random alphanumeric string of given length
-  const generateRandomString = (length) => {
-    let chars =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    let result = "";
-    for (let i = length; i > 0; --i) {
-      result += chars[Math.floor(Math.random() * chars.length)];
-    }
-    return result;
-  };
-
   // handles comment submits from users
-  const handleSubmit = (author, content) => {
-    if (!comment) {
-      setComment([
-        {
-          id: generateRandomString(21),
-          author: author,
-          content: content,
-        },
-      ]);
-    }
+  function onSubmit(author, content) {
+    //generates a random alphanumeric string of given length
+    const generateRandomString = (length) => {
+      let chars =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      let result = "";
+      for (let i = length; i > 0; --i) {
+        result += chars[Math.floor(Math.random() * chars.length)];
+      }
+      return result;
+    };
+
     setComment([
       ...comment,
       {
@@ -46,7 +41,8 @@ function App() {
         content: content,
       },
     ]);
-  };
+    console.log(comment);
+  }
 
   return (
     <>
@@ -58,9 +54,20 @@ function App() {
         imageSrc={blogObject.imageSrc}
         imageAlt={blogObject.imageAlt}></BlogPost>
       <CommentList comment={comment}></CommentList>
-      <CommentForm onSubmit={handleSubmit}></CommentForm>
+      <CommentForm onSubmit={onSubmit}></CommentForm>
     </>
   );
 }
 
 export default App;
+
+/* 
+    if (!comment) {
+      setComment([
+        {
+          id: generateRandomString(21),
+          author: author,
+          content: content,
+        },
+      ]); 
+    } */
