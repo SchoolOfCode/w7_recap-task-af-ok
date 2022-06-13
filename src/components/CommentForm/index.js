@@ -21,19 +21,19 @@ function CommentForm({ onSubmit }) {
   return (
     <form onSubmit={handleSubmit} className="comment-form">
       <label>
-        Author:
+        <p>Author:</p>
         <input type="text" value={author} onChange={handleAuthorChange} />
       </label>
       <label>
-        Comment:
+        <p>Comment:</p>
         <textarea
-          rows="5"
-          cols="20"
+          rows="3"
+          cols="16"
           value={content}
           onChange={handleContentChange}
         />
       </label>
-      <input type="submit" />
+      <input className="submit" type="submit" />
     </form>
   );
 }

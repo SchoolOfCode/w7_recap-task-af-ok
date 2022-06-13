@@ -6,9 +6,12 @@ function Comment({ author, content, id }) {
   return (
     <article className="comment" key={id}>
       <h3>
-        {initials} {author}
+        <p className="initials">{initials}</p>{" "}
+        <p className="comment-author">{author}</p>
       </h3>
-      <p>{content}</p>
+      <p className="comment-content">
+        <em>{content}</em>
+      </p>
     </article>
   );
 }
