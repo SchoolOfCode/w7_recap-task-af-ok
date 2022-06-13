@@ -19,7 +19,7 @@ function CommentForm({ onSubmit }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="comment-form">
       <label>
         Author:
         <input type="text" value={author} onChange={handleAuthorChange} />

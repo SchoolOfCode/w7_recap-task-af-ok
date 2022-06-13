@@ -4,9 +4,10 @@ function Comment({ author, content, id }) {
     .map((n) => n[0])
     .join("");
   return (
-    <article key={id}>
-      <h3>{initials}</h3>
-      <h4>{author}</h4>
+    <article className="comment" key={id}>
+      <h3>
+        {initials} {author}
+      </h3>
       <p>{content}</p>
     </article>
   );
